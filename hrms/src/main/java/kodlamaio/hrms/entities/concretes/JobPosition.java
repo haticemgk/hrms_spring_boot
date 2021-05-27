@@ -3,6 +3,7 @@ package kodlamaio.hrms.entities.concretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
@@ -11,14 +12,14 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name= "job_positions")
-public class JobPositions {
+public class JobPosition {
 	
 	@Id
-	@GeneratedValue
-	@Column(name="job_positions_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
 	private int id;
 	
-	@Column(name="job_positions_position")
+	@Column(name="position")
 	private String position;
 
 }
